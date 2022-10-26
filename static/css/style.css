@@ -9,22 +9,6 @@
   color: rgb(184, 24, 24);
   font-family: 'Bree Serif', sans-serif
 }
-.btn {
-  border: 1px solid #000;
-  outline: none;
-  height: 40px;
-  width: 40%;
-  background-color: rgb(125, 36, 241);
-  color: #000;
-  border-radius: 4px;
-  font-weight: bold;
-}
-.btn:hover {
-  background: #000;
-  border: 1px solid;
-  color: #fff;
-}
-
 
 .button_css {
   color: #494949 !important;
@@ -36,7 +20,6 @@
   display: inline-block;
   transition: all 0.4s ease 0s;
 }
-
 .button_css:hover {
   color: #ffffff !important;
   background: #f6b93b;
