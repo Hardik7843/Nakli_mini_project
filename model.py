@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 #load data
-df = pd.read_csv(r"C:\Users\hardi\OneDrive\Desktop\Hardik stuff\SEM 5\SEM 5\Actual_mini_project\Mini_project_27\data\ohe_data_reduce_cat_class.csv")
+df = pd.read_csv(r"E:\Repositories\Nakli_mini_project\data\ohe_data_reduce_cat_class.csv")
 
 # Split data
 X= df.drop('price', axis=1)
@@ -23,7 +23,7 @@ X_test = sc.transform(X_test)
 
 ###### Load Model
 
-model = joblib.load(r'C:\Users\hardi\OneDrive\Desktop\Hardik stuff\SEM 5\SEM 5\Actual_mini_project\Mini_project_27\bangalore_house_price_prediction_rfr_model.pkl')
+model = joblib.load(r'E:\Repositories\Nakli_mini_project\bangalore_house_price_prediction_rfr_model.pkl')
 
 
 # it help to get predicted value of house  by providing features value 

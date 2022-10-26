@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -13,53 +13,171 @@
 </head>
 
 <body>
-  <h1>Enter the details for Price Prediction:</h1>
+  <center>
+    <h1>Enter the details for Price Prediction:</h1>
+    <div>
+
+      <form action="{{ url_for('predict')}}" method="post">
+        <div class="mb-3">
+          <label class="form-label">Enter Number of bathrooms</label>
+          <input type="number" name="bathrooms" placeholder="Bathrooms" required="required" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Enter Number of Balcony</label>
+          <input type="number" name="balcony" placeholder="Balcony" required="required" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Enter Total Square Foot</label>
+          <input type="number" name="total_sqft_int" placeholder="Total Squre Foot" required="required" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Enter BHK</label>
+          <input type="number" name="bhk" placeholder="BHK" required="required" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Enter Price Per Square Foot</label>
+          <input type="number" name="price_per_sqft" placeholder="Price Per Squre Foot" required="required" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Enter Area Type</label>
+          <input type="text" name="area_type" placeholder="Area Type" required="required" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Enter House Availability</label>
+          <input type="text" name="availability" placeholder="House Availability" required="required" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Enter House Location</label>
+          <input type="text" name="location" placeholder="House Location" required="required" />
+        </div>
+      </form>
+
+      <div>
+        <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict House
+            Price</strong></button></a>
+      </div>
+      <center>
+        <div>
+          <center>
+            <h2>{{ prediction_text }}</h2>
+          </center>
+        </div>
+    </div>
+</body>
+
+</html> -->
+
+<!-- Bangalore House Price Predictor -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bangalore House Price Predictor ML App</title>
+
+  <style>
+    body {
+      background-image: url('static/images/house3.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    h1 {
+      color: red;
+    }
+
+    /* CSS code for heading h1 */
+    p {
+      color: yellow;
+    }
+
+    /* CSS code for heading h1 */
+
+    /* CSS code for button */
+    .button_css {
+      color: #494949 !important;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: #ffffff;
+      padding: 20px;
+      border: 4px solid #494949 !important;
+      display: inline-block;
+      transition: all 0.4s ease 0s;
+    }
+
+    .button_css:hover {
+      color: #ffffff !important;
+      background: #f6b93b;
+      border-color: #f6b93b !important;
+      transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Oxstandhard Univercity Banner-->
   <div>
-    <form action="{{ url_for('predict')}}" method="post">
-      <div class="mb-3">
-        <label class="form-label">Enter Number of bathrooms</label>
-        <input type="number" name="bathrooms" placeholder="Bathrooms" required="required" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Enter Number of Balcony</label>
-        <input type="number" name="balcony" placeholder="Balcony" required="required" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Enter Total Square Foot</label>
-        <input type="number" name="total_sqft_int" placeholder="Total Squre Foot" required="required" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Enter BHK</label>
-        <input type="number" name="bhk" placeholder="BHK" required="required" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Enter Price Per Square Foot</label>
-        <input type="number" name="price_per_sqft" placeholder="Price Per Squre Foot" required="required" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Enter Area Type</label>
-        <input type="text" name="area_type" placeholder="Area Type" required="required" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Enter House Availability</label>
-        <input type="text" name="availability" placeholder="House Availability" required="required" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Enter House Location</label>
+    <img src="static/images/bangalore house banner.png" class="w3-border w3-padding" alt="Indian AI Production"
+      style="width:100%">
+  </div>
+
+
+
+  <div class="login">
+
+    <!-- Form Get input to predict Marks-->
+    <center>
+      <form action="{{ url_for('predict')}}" method="post">
+        <h1>*Enter the Information of House to Predict the Price*</h1>
+
+        <input align="center" type="number" name="bathrooms" placeholder="Bathrooms" required="required" width="48"
+          height="10" step=".01" /><br>
+        <input align="center" type="number" name="balcony" placeholder="Balcony" required="required" width="48"
+          height="10" step=".01" /><br>
+        <input align="center" type="number" name="total_sqft_int" placeholder="Total Squre Foot" required="required"
+          width="48" height="10" step=".01" /><br>
+        <input align="center" type="number" name="bhk" placeholder="BHK" required="required" width="48" height="10"
+          step=".01" /><br>
+        <input align="center" type="number" name="price_per_sqft" placeholder="Price Per Squre Foot" required="required"
+          width="48" height="10" step=".01" /><br>
+        <input type="text" name="area_type" placeholder="Area Type" required="required" /><br>
+        <input type="text" name="availability" placeholder="House Availability" required="required" /><br>
         <input type="text" name="location" placeholder="House Location" required="required" />
-      </div>
-    </form>
 
-    <!-- <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict House Price</strong></button></a> -->
+        <br>
 
+        <br>
+
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="https://indianaiproduction.com/"
+            target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict House
+                Price</strong></button></a>
+        </div>
+
+      </form>
+    </center>
+
+    <!-- Show predicted output using ML model -->
     <div>
-      <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict House
-          Price</strong></button></a>
+      <center>
+        <h2>{{ prediction_text }}</h2>
+      </center>
     </div>
 
-    <div>
-      <h2>{{prediction_text}}</h2>
-    </div>
+  </div>
+
+
+  <div class="footer">
+    <p>Indian AI Production<br>
+
+      <a href="http://youtube.com/indianaiproduction">Channel |</a>
+      <a href="https://indianaiproduction.com/">| Website</a>
+    </p>
   </div>
 </body>
 

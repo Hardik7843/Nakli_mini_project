@@ -4,12 +4,7 @@
   box-sizing: border-box;
   font-family: 'Bree Serif', sans-serif;
 }
-body{
-  background-image: url('../images/house3.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+
 .form-label{
   color: rgb(184, 24, 24);
   font-family: 'Bree Serif', sans-serif
@@ -30,11 +25,6 @@ body{
   color: #fff;
 }
 
-h2 {
-  color: rgb(247, 241, 241);
-  text-align: center;
-  font-size: 25px;
-}
 
 .button_css {
   color: #494949 !important;
