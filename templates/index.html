@@ -1,0 +1,68 @@
+<!-- Bangalore House Price Predictor -->
+ 
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>House Price Predictor</title>
+ 
+  <link rel="stylesheet" href="../static/css/style.css">
+ 
+</head>
+ 
+<body>
+ 
+  <!-- Show Oxstandhard Univercity Banner-->
+  <!--div>
+    <img src="static/images/bangalore house banner.png" class="w3-border w3-padding" alt="Indian AI Production" style="width:100%">
+  </div-->
+ 
+  
+  
+ <div class="login">
+     
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>*Enter the Information of House to Predict the Price*</h1>
+         
+        <input align="center" type="number" name="bathrooms" placeholder="Bathrooms" required="required" width="48" height="10" step=".01"/><br>
+        <input align="center" type="number" name="balcony" placeholder="Balcony" required="required" width="48" height="10" step=".01"/><br>
+        <input align="center" type="number" name="total_sqft_int" placeholder="Total Squre Foot" required="required" width="48" height="10" step=".01"/><br>
+        <input align="center" type="number" name="bhk" placeholder="BHK" required="required" width="48" height="10" step=".01"/><br>
+        <input align="center" type="number" name="price_per_sqft" placeholder="Price Per Squre Foot" required="required" width="48" height="10" step=".01"/><br>
+        <input type="text" name="area_type" placeholder="Area Type" required="required" /><br>
+        <input type="text" name="availability" placeholder="House Availability" required="required" /><br>
+        <input type="text" name="location" placeholder="House Location" required="required" />        
+ 
+        <br>
+         
+        <br>
+         
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="https://indianaiproduction.com/" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict House Price</strong></button></a>
+        </div>
+         
+    </form>
+    </center>
+    
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+ 
+ </div>
+ 
+ 
+<div class="footer">
+    <p>Indian AI Production<br>
+     
+      <a href="http://youtube.com/indianaiproduction">Channel |</a>
+      <a href="https://indianaiproduction.com/">| Website</a>
+    </p>
+</div>
+</body>
+</html>
