@@ -4,9 +4,11 @@
   box-sizing: border-box;
   font-family: 'Bree Serif', sans-serif;
 }
-.body{
-  background-color: aqua;
-  background-image: ;
+body{
+  background-image: url('../images/house2.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .form-label{
   color: rgb(13, 13, 14);
