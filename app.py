@@ -35,7 +35,7 @@ def predict():
     
     
     for i in range(len(df1)):
-        if ((predicted_price*10000 - 10000) < df1.loc[i]['Price'] <(predicted_price*10000 + 10000)):
+        if (((predicted_price*10000 - 10000) < df1.loc[i]['Price'] <(predicted_price*10000 + 10000)) and df1.loc[i]['Location']==location) :
             df2 = df2.append(df1.loc[i])
     
     df2 = df2.dropna()
