@@ -133,3 +133,4 @@ def fetch_features(i):
       print(str(SortedArea.loc[i]['No._of_Bedrooms'])+" BHK")
       print("Locattion: "+str(SortedArea.loc[i]['Location']))
       print("------------------------------------------------------------")
+      

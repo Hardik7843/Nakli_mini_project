@@ -113,39 +113,15 @@
 
   </center>
 
-  <div class="card">
-    <table class="table table-bordered table-dark">
-      <caption>List of Houses</caption>
-      <thead>
-        <tr>
-          <th class="table-title" scope="col">Resale</th>
-          <th class="table-title" scope="col">Gym</th>
-          <th class="table-title" scope="col">Lift</th>
-          <th class="table-title" scope="col">Maintanance</th>
-          <th class="table-title" scope="col">Intercom</th>
-          <th class="table-title" scope="col">Gas Connection</th>
-          <th class="table-title" scope="col">Price</th>
-          <th class="table-title" scope="col">Area</th>
-          <th class="table-title" scope="col">Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for lili in listHouse %}
-        <tr>
-          <td>{{ lili.Resale }}</td>
-          <td>{{ lili.Gymnasium }}</td>
-          <td>{{ lili.Lift }}</td>
-          <td>{{ lili.Maintenance }}</td>
-          <td>{{ lili.Intercom }}</td>
-          <td>{{ lili.Gas_Conn }}</td>
-          <td>{{ lili.Price }}</td>
-          <td>{{ lili.Area }}</td>
-          <td>{{ lili.Location }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+
+  <div>
+
+    {% for table in tables %}
+
+    {{ table|safe }}
+    {% endfor %}
+  </div> -->
+
 
 </body>
 

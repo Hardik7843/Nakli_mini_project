@@ -1,6 +1,7 @@
 #Import Libraries
 from flask import Flask, render_template , redirect,url_for, session, request
 import model # load model.py
+import pandas as pd
 import function
 
 app = Flask(__name__)
@@ -28,10 +29,22 @@ def predict():
     # predict the price of house by calling model.py
     predicted_price = model.predict_house_price(bath,balcony,total_sqft_int,bhk,price_per_sqft,area_type,availability,location)       
 
-    listHouse = function.Fetch(predicted_price,total_sqft_int,bhk)
+    df1 = pd.DataFrame(pd.read_excel(r"E:\Repositories\Nakli_mini_project\data\Mumbai1.xlsx"))
+    df2= pd.DataFrame().reindex_like(df1)
+    
+    
+    
+    for i in range(len(df1)):
+        if ((predicted_price*10000 - 10000) < df1.loc[i]['Price'] <(predicted_price*10000 + 10000)):
+            df2 = df2.append(df1.loc[i])
+    
+    df2 = df2.dropna()
+    df2 = df2.reset_index(drop = True)
+
+    print(df2)
 
     # render the html page and show the output
-    return render_template('index.html', prediction_text='Predicted Price of This House is Rs. {} lacs'.format(predicted_price), listHouse=listHouse)
+    return render_template('index.html', prediction_text='Predicted Price of This House is Rs. {} lacs'.format(predicted_price),tables=[df2.to_html(classes='table table-striped table-bordered table-hover table-condensed',header = "true")])
 
     
 if __name__ == "__main__":
