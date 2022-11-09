@@ -7,12 +7,11 @@ Original file is located at
     https://colab.research.google.com/drive/1i_sLmXu2ymE1UUGsDKFnCWzkyCfEFK6T
 """
 
-from google.colab import files
-uploaded = files.upload()
+
 import numpy as np
 import pandas as pd
 
-Adf = pd.read_excel("Mumbai1.xlsx")
+Adf = pd.read_excel(r"E:\Repositories\Nakli_mini_project\data\Mumbai1.xlsx")
 
 SortedPrice = Adf.sort_values(by='Price',ascending=False)
 SortedPrice
@@ -25,15 +24,15 @@ def Fetch(PredictedPrice,m_area,m_bed):
   status = True
   
   for i in range(len(SortedPrice)):
-    if SortedPrice.loc[i]['Price']==PredictedPrice*10000:# or SortedPrice.loc[i]['Price']>PredictedPrice*10000:
+    if SortedPrice.loc[i]['Price']== PredictedPrice*10000:# or SortedPrice.loc[i]['Price']>PredictedPrice*10000:
       fetch_on_price(i)
     else:
       status = False
+
   if status == False:
     print("#")
     Fetch2(m_area,m_bed)
 
-Fetch(1067.36,5000,3)
 
 """**For Area and Bed**"""
 
@@ -48,7 +47,6 @@ def Fetch2(area,bed):
     if SortedArea.loc[i]['No._of_Bedrooms']==int(bed):
       fetch_features(i)
 
-Fetch2(5000,3)
 
 def fetch_on_price(i):
       if SortedPrice.loc[i]['Resale']==1:

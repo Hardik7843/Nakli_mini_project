@@ -13,7 +13,7 @@
 </head>
 
 
-<body>
+<!-- <body>
   <center>
 
     <div class="login">
@@ -65,52 +65,88 @@
     <h2>{{ prediction_text }}</h2>
   </div>
 
-</body>
+</body> -->
 
 
 
 
-<!-- <body>
-  <div class="login">
+<body>
+  <center>
+    <div class="login">
 
-    <form action="{{ url_for('predict')}}" method="post">
-      <h1>Enter the Information of House to Predict the Price</h1>
+      <form action="{{ url_for('predict')}}" method="post">
+        <h1>Enter the Information of House to Predict the Price</h1>
 
-      <input type="number" name="bathrooms" placeholder="Bathrooms" required="required" width="48" height="10"
-        step=".01" /><br>
-      <input type="number" name="balcony" placeholder="Balcony" required="required" width="48" height="10"
-        step=".01" /><br>
-      <input type="number" name="total_sqft_int" placeholder="Total Squre Foot" required="required" width="48"
-        height="10" step=".01" /><br>
-      <input type="number" name="bhk" placeholder="BHK" required="required" width="48" height="10" step=".01" /><br>
-      <input type="number" name="price_per_sqft" placeholder="Price Per Squre Foot" required="required" width="48"
-        height="10" step=".01" /><br>
-      <input type="text" name="area_type" placeholder="Area Type" required="required" /><br>
-      <input type="text" name="availability" placeholder="House Availability" required="required" /><br>
-      <input type="text" name="location" placeholder="House Location" required="required" />
+        <input type="number" name="bathrooms" placeholder="Bathrooms" required="required" width="48" height="10"
+          step=".01" />
+        <br>
+        <input type="number" name="balcony" placeholder="Balcony" required="required" width="48" height="10"
+          step=".01" />
+        <br>
+        <input type="number" name="total_sqft_int" placeholder="Total Squre Foot" required="required" width="48"
+          height="10" step=".01" /><br>
+        <input type="number" name="bhk" placeholder="BHK" required="required" width="48" height="10" step=".01" /><br>
+        <input type="number" name="price_per_sqft" placeholder="Price Per Squre Foot" required="required" width="48"
+          height="10" step=".01" /><br>
+        <input type="text" name="area_type" placeholder="Area Type" required="required" /><br>
+        <input type="text" name="availability" placeholder="House Availability" required="required" /><br>
+        <input type="text" name="location" placeholder="House Location" required="required" />
 
-      <br>
+        <br>
 
-      <br>
+        <br>
+
+        <div class="d-grid gap-2 col-3 mx-auto">
+          <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict House
+              Price</strong></button></a>
+        </div>
+
+      </form>
 
 
 
-
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict House
-            Price</strong></button></a>
+      <div>
+        <h2>{{ prediction_text }}</h2>
       </div>
 
-    </form>
-
-
-
-    <div>
-      <h2>{{prediction_text}}</h2>
     </div>
 
+  </center>
+
+  <div class="card">
+    <table class="table table-bordered table-dark">
+      <caption>List of Houses</caption>
+      <thead>
+        <tr>
+          <th class="table-title" scope="col">Resale</th>
+          <th class="table-title" scope="col">Gym</th>
+          <th class="table-title" scope="col">Lift</th>
+          <th class="table-title" scope="col">Maintanance</th>
+          <th class="table-title" scope="col">Intercom</th>
+          <th class="table-title" scope="col">Gas Connection</th>
+          <th class="table-title" scope="col">Price</th>
+          <th class="table-title" scope="col">Area</th>
+          <th class="table-title" scope="col">Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for lili in listHouse %}
+        <tr>
+          <td>{{ lili.Resale }}</td>
+          <td>{{ lili.Gymnasium }}</td>
+          <td>{{ lili.Lift }}</td>
+          <td>{{ lili.Maintenance }}</td>
+          <td>{{ lili.Intercom }}</td>
+          <td>{{ lili.Gas_Conn }}</td>
+          <td>{{ lili.Price }}</td>
+          <td>{{ lili.Area }}</td>
+          <td>{{ lili.Location }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 
-</body> -->
+</body>
 
 </html>
