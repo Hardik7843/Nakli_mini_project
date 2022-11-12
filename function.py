@@ -11,7 +11,7 @@ Original file is located at
 import numpy as np
 import pandas as pd
 
-Adf = pd.read_excel(r"E:\Repositories\Nakli_mini_project\data\Mumbai1.xlsx")
+Adf = pd.read_excel(r"data\Mumbai1.xlsx")
 
 SortedPrice = Adf.sort_values(by='Price',ascending=False)
 SortedPrice

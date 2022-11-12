@@ -29,13 +29,13 @@ def predict():
     # predict the price of house by calling model.py
     predicted_price = model.predict_house_price(bath,balcony,total_sqft_int,bhk,price_per_sqft,area_type,availability,location)       
 
-    df1 = pd.DataFrame(pd.read_excel(r"E:\Repositories\Nakli_mini_project\data\Mumbai1.xlsx"))
+    df1 = pd.DataFrame(pd.read_excel(r"data\Mumbai1.xlsx"))
     df2= pd.DataFrame().reindex_like(df1)
     
-    
-    
+    #and df1.loc[i]['Location']==location
+    print(bhk)
     for i in range(len(df1)):
-        if (((predicted_price*10000 - 10000) < df1.loc[i]['Price'] <(predicted_price*10000 + 10000)) and df1.loc[i]['Location']==location) :
+        if (((predicted_price*10000 - 10000) < df1.loc[i]['Price'] <(predicted_price*10000 + 10000))) :
             df2 = df2.append(df1.loc[i])
     
     df2 = df2.dropna()
